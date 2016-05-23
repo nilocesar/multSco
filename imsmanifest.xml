@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.5 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="MANIFEST_LULIESTRATEGIADIGITAL" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <organizations default="ORG-LULI0002">
+    <organization identifier="ORG-LULI0002" structure="hierarchical">
+      <title>Caio - treinamento</title>
+      <item identifier="ITEM-1" identifierref="RES-3" isvisible="true">
+       <title>Pílula</title>
+      </item>
+      <item identifier="ITEM-2" identifierref="RES-2" isvisible="true">
+        <title>Video</title>
+        <adlcp:prerequisites type="aicc_script">ITEM-1</adlcp:prerequisites>
+      </item>    
+      <item identifier="ITEM-3" identifierref="RES-1" isvisible="true">
+        <title>Agenda</title>
+        <adlcp:prerequisites type="aicc_script">ITEM-2</adlcp:prerequisites>
+      </item>
+      <item identifier="ITEM-4" identifierref="RES-4" isvisible="true">
+        <title>Plano de Ação</title>
+        <adlcp:prerequisites type="aicc_script">ITEM-3</adlcp:prerequisites>
+      </item>
+      <item identifier="ITEM-5" identifierref="RES-5" isvisible="true">
+        <title>Tirinhas</title>
+        <adlcp:prerequisites type="aicc_script">ITEM-4</adlcp:prerequisites>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-1" type="webcontent" href="1_agenda/index.html" adlcp:scormtype="sco">
+      <file href="1_agenda/index.html" />
+      <file href="1_agenda/viewer.css" />
+    </resource>
+    <resource identifier="RES-2" type="webcontent" href="2_video_vt/index.html" adlcp:scormtype="sco">
+      <file href="2_video_vt/index.html" />
+    </resource>
+    <resource identifier="RES-3" type="webcontent" href="3_pilula/index_lms.html" adlcp:scormtype="sco">
+      <file href="3_pilula/index_lms.html" />
+      <file href="3_pilula/lms/AICCComm.html" />
+      <file href="3_pilula/lms/AICCFunctions.js" />
+      <file href="3_pilula/lms/API.js" />
+      <file href="3_pilula/lms/APIConstants.js" />
+      <file href="3_pilula/lms/blank.html" />
+      <file href="3_pilula/lms/browsersniff.js" />
+      <file href="3_pilula/lms/Configuration.js" />
+      <file href="3_pilula/lms/LMSAPI.js" />
+      <file href="3_pilula/lms/NONEFunctions.js" />
+      <file href="3_pilula/lms/SCORM2004Functions.js" />
+      <file href="3_pilula/lms/SCORMFunctions.js" />
+      <file href="3_pilula/lms/UtilityFunctions.js" />
+    </resource>
+    <resource identifier="RES-4" type="webcontent" href="4_plano_de_acao/index.html" adlcp:scormtype="sco">
+      <file href="4_plano_de_acao/index.html" />
+      <file href="4_plano_de_acao/viewer.css" />
+    </resource>
+    <resource identifier="RES-5" type="webcontent" href="5_tirinhas/index.html" adlcp:scormtype="sco">
+      <file href="5_tirinhas/index.html" />
+      <file href="5_tirinhas/viewer.css" />
+    </resource>
+  </resources>
+</manifest>
+

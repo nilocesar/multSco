@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PDF</title>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/scorm.jquery.js"></script>
+</head>
+
+<body style="margin:0px;padding:0px;overflow:hidden">
+    
+    <iframe src="tirinhas.pdf" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
+    
+    <script>
+        $("body").scorm_start();
+         $('body').scorm_set_suspendData("ponto", "10");
+          setTimeout( function(){ 
+                 $("body").scorm_complete();
+            } , 1000 * 4 );
+    </script>
+</body>
+
+
+</html>

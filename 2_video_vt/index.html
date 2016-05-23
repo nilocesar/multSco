@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="IE=edge,chrome=1" />
+        <title>Video</title>
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/scorm.jquery.js"></script>
+        <script src="js/mediaelement-and-player.min.js"></script>
+        <link rel="stylesheet" href="js/mediaelementplayer.min.css" />
+        <link rel="stylesheet" href="js/mejs-skins.css" />
+        
+        <style>
+            body {
+                background-color: rgb(231, 231, 231);
+                margin-top: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+            .divPlayer {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-left: -320px;
+                margin-top: -120px;
+                border-top-color: rgb(30, 30, 30);
+                border-top-width: 4px;
+                border-top-style: solid;
+                border-bottom-color: rgb(30, 30, 30);
+                border-bottom-width: 4px;
+                border-bottom-style: solid;
+                border-right-color: rgb(30, 30, 30);
+                border-right-width: 4px;
+                border-right-style: solid;
+                border-left-color: rgb(30, 30, 30);
+                border-left-width: 4px;
+                border-left-style: solid;
+            }
+            .close_ico {
+                float: right;
+                margin-right: 10px;
+                margin-top: 10px;
+            }
+            .close_ico:hover {
+                opacity: 0.4;
+                filter: alpha(opacity=40);
+            }
+            .head_line {
+                width: 100%;
+                height: 40px;
+                text-align: center;
+                border-top-color: #00904b;
+                border-top-width: 4px;
+                border-top-style: solid;
+                display: block;
+                background-image: none;
+                background-attachment: scroll;
+                background-repeat: repeat;
+                background-position-x: 0%;
+                background-position-y: 0%;
+                background-size: auto;
+                background-origin: padding-box;
+                background-clip: border-box;
+                background-color: rgb(30, 30, 30);
+            }
+            .logo {
+                margin-top: 20px;
+                margin-left: 10px;
+            }
+            .logoConteudo {
+                width: 100%;
+                height: 90px;
+                background-color: #FFF;
+            }
+            .conteudo {
+                width: 100%;
+            }
+        </style>
+    
+    </head>
+    <body>
+    
+         <div class="conteudo">
+
+        <div class="head_line"> <img onclick="closeCourse();" class="close_ico" src="media/close_ico.jpg" /> </div>
+
+        <div class="logoConteudo"> <img class="logo" src="media/logo_rodobens.jpg" /> </div>
+
+        <div id="videoPlayer" class="divPlayer">
+
+
+            <video width="640" height="360" id="myVideo" controls>
+                <source src="media/01_Luli_00.mp4" type="video/mp4">
+            </video>
+
+
+        </div>
+    </div>
+        
+	<script>
+        
+        //INICIANDO SCORM
+       $("body").scorm_start(); /// inicaliza o scorm
+	   
+	   $('body').scorm_set_lessonLocation( "pagina" , "pagina1");
+
+        setTimeout(function () {
+
+                    window.moveTo(0, 0);
+                    window.resizeTo(screen.width, screen.height);
+
+                    top.window.moveTo(0, 0);
+                    if (document.all) {
+                        top.window.resizeTo(screen.availWidth, screen.availHeight);
+                    } else if (document.layers || document.getElementById) {
+                        if (top.window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
+                            top.window.outerHeight = screen.availHeight;
+                            top.window.outerWidth = screen.availWidth;
+                        }
+                    }
+
+                }, 1000 * 0.2);
+
+
+        document.getElementById('myVideo').addEventListener('ended',myHandler,false);
+            function myHandler(e) {
+                if(!e) { e = window.event; }
+                $('body').scorm_set_suspendData("ponto", "50");
+                $("body").scorm_complete();
+                console.log("video completo; parabens");
+            }
+
+             console.log("video atual 23 14;");
+
+         $(window).unload(
+            function () {
+
+                $('body').scorm_quit();
+            }
+         );
+                
+        //##################Funções de apoio
+            
+        function closeCourseWindow(){
+            //window.top.close();			    
+            top.close();			    
+        }
+    
+    </script>
+</body>
+</html>
